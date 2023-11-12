@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feet and Inches to Centimeters Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Imperial to Metric Converter</h1>
+  <h2>Feet, Inches, Fractional Inches</h2>
+
+  <label for="feet">Feet:</label>
+  <input type="number" id="feet" placeholder="Enter feet" required>
+
+  <label for="inches">Inches:</label>
+  <input type="number" id="inches" placeholder="Enter inches" required>
+
+  <label for="fractional">Fractional Inches:</label>
+  <input type="number" id="fractional" placeholder="Enter fractional numerator">
+
+  <input type="number" id="fractionald" placeholder="Enter fractional denominator">
+
+  <button onclick="convertToCentimeters()">Convert</button>
+
+  <div id="result"></div>
+
+  <script>
+    function convertToCentimeters() {
+      const feet = parseFloat(document.getElementById('feet').value) || 0;
+      const inches = parseFloat(document.getElementById('inches').value) || 0;
+      const fractionalNume = parseFloat(document.getElementById('fractional').value) || 0;
+      const fractionalDen = parseFloat(document.getElementById('fractionald').value) || 1;
+      const totalInches = feet * 12 + inches + fractionalNume / fractionalDen;
+      const centimeters = totalInches * 2.54;
+
+      document.getElementById('result').innerHTML = `Result: ${centimeters.toFixed(2)} cm`;
+    }
+  </script>
+
+</body>
+</html>
