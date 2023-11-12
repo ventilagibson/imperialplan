@@ -53,7 +53,7 @@
   <label for="fractional">Fractional Inches:</label>
   <input type="number" id="fractional" placeholder="Enter fractional numerator">
 
-  <input type="number" id="fractionald" placeholder="Enter fractional denominator">
+  <input type="number" id="fractionald" placeholder="Enter fractional denominator (defaults to 8)">
 
   <button onclick="convertToCentimeters()">Convert</button>
 
@@ -64,7 +64,7 @@
       const feet = parseFloat(document.getElementById('feet').value) || 0;
       const inches = parseFloat(document.getElementById('inches').value) || 0;
       const fractionalNume = parseFloat(document.getElementById('fractional').value) || 0;
-      const fractionalDen = parseFloat(document.getElementById('fractionald').value) || 1;
+      const fractionalDen = parseFloat(document.getElementById('fractionald').value) || 8;
       const totalInches = feet * 12 + inches + fractionalNume / fractionalDen;
       const centimeters = totalInches * 2.54;
 
